@@ -86,7 +86,10 @@ input {
     background-color: rgb(255, 255, 255);
 }
 #flag {
-    opacity: 0;
+    display: none;
+    width: 150px;
+    margin: 40px;
+
 }
 .err {
     text-align: center;
