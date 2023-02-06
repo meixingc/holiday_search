@@ -1,6 +1,6 @@
 html {
     background-image: linear-gradient(90deg, hsl(345, 100%, 93%), rgb(210, 244, 255));
-    font-family: 'Lexend',sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 h1 {
     color: white;
@@ -84,6 +84,12 @@ input {
 #random:hover {
     font-size: 17px;
     background-color: rgb(255, 255, 255);
+}
+#flag {
+    opacity: 0;
+}
+.err {
+    text-align: center;
 }
 
 
