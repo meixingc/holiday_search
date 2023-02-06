@@ -4,12 +4,15 @@ html {
 }
 h1 {
     color: white;
-    text-shadow: rgb(124, 124, 124) 1px 0 10px;
+    text-shadow: rgb(124, 124, 124) 1px 0 10px, 2px 2px 2px pink;
     font-size: 70px;
     margin: 40px;
     padding-bottom: 30px;
     border-bottom: solid 1px rgb(124, 124, 124);
     text-align: center;
+}
+p {
+    font-size: 17px;
 }
 .option {
     margin: 40px;
@@ -27,9 +30,28 @@ input {
     margin: 20px;
     text-align: center;
 }
-#inputBar {
+#country-code {
+    font-size: 15px;
     text-align: center;
-    width: 400px;
+    width: 120px;
+    height: 30px;
+    text-shadow: 1px 1px 2px pink;
+    border: white;
+    box-shadow: 2px 2px 2px pink;
+}
+#holiday-name {
+    font-size: 15px;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    text-shadow: 1px 1px 2px pink;
+    border: white;
+    box-shadow: 2px 2px 2px pink;
+}
+#date {
+    font-size: 15px;
+    text-align: center;
+    width: 50px;
     height: 30px;
     text-shadow: 1px 1px 2px pink;
     border: white;
@@ -39,17 +61,18 @@ input {
     margin-left: 10px;
     background-color: white;
     border: solid 1px rgb(0, 0, 0);
-    width: 120px;
-    height: 30px;
+    font-size: 15px;
+    width: 80px;
+    height: 20px;
     text-shadow: 1px 1px 2px pink;
     box-shadow: 2px 2px 2px pink;
 }
 #searchButton:hover {
-    font-size: 22px;
+    font-size: 17px;
     background-color: rgb(255, 255, 255);
 }
 #random {
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(255, 255, 255);
     border: solid 1px rgb(0, 0, 0);
@@ -59,7 +82,7 @@ input {
     text-shadow: 1px 1px 2px pink;
 }
 #random:hover {
-    font-size: 22px;
+    font-size: 17px;
     background-color: rgb(255, 255, 255);
 }
 
