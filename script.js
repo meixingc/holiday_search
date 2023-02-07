@@ -2,6 +2,7 @@
 let flagIMG = document.querySelector('#flag');
 const error = document.querySelector('.err')
 const search = document.querySelector('#searchButton');
+const random = document.querySelector('#random')
 const list = document.querySelector('.list')
 let tracker = 0;
 
@@ -132,7 +133,58 @@ async function searched(event) {
     }
     }
 
+async function randomed(event){
+    event.preventDefault();
+    error.innerText = '';
+    if (tracker == 1){
+        document.querySelector('.list').innerText = ''
+    }
+    const countries = `https://holidayapi.com/v1/countries?pretty&key=d194ebca-ea3d-4c62-84f4-0898e8fc9701`
+    fetch(countries)
+        .then(res => {
+            return res.json()
+        })
+        .then(res => {
+            let countriesLength = res.countries.length
+            let userIndex = Math.floor(Math.random() * countriesLength);
+            let userCode = res.countries[userIndex].code
+            flagIMG.style.display = 'flex';
+            flagIMG.src = `https://www.countryflagicons.com/FLAT/64/${userCode}.png`
+            let holidayCountryUrl = `https://holidayapi.com/v1/holidays?pretty&key=d194ebca-ea3d-4c62-84f4-0898e8fc9701&country=${userCode}&year=2022`;
+            fetch(holidayCountryUrl)
+                .then(res => {
+                    return res.json()
+                })
+                .then(res => {
+                    let holidayLength = res.holidays.length
+                    let holidayIndex = Math.floor(Math.random() * holidayLength)
+                    let holidayName = document.createElement('h4')
+                    holidayName.className = 'hName'
+                    holidayName.innerText = res.holidays[holidayIndex].name
+                    list.append(holidayName);
+                    let holidayDate = document.createElement('h5')
+                    holidayDate.className = 'hDate'
+                    holidayDate.innerHTML = res.holidays[holidayIndex].date
+                    list.append('Date: ');
+                    list.append(holidayDate);
+                    let holidayObserved = document.createElement('h5')
+                    holidayObserved.className = 'hObserved'
+                    holidayObserved.innerHTML = res.holidays[holidayIndex].observed
+                    list.append('Observed: ');
+                    list.append(holidayObserved);
+                    let holidayPub = document.createElement('h5')
+                    holidayPub.className = 'hPub'
+                    holidayPub.innerHTML = res.holidays[holidayIndex].public
+                    list.append('Public: ');
+                    list.append(holidayPub);
+                })
+            
+    })
+    tracker = 1;
+}
+
 search.addEventListener('click', searched);
+random.addEventListener('click', randomed)
 
 
 

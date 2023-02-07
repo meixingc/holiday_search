@@ -87,17 +87,22 @@ input {
 }.err {
     text-align: center;
 }
+.res {
+    display: flex;
+    justify-content: center;
+}
 .col {
-    float: left;
+    float: right ;
 }
 #flag {
     display: none;
-    margin-left: 70px;
+    margin-left: 40px;
     width: 150px; 
     margin-right: 50px;
 }
 .list {
     text-align: left;
+    margin-right: 40px;
 }
 .hPub {
     padding-bottom: 30px;
