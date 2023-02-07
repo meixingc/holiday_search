@@ -84,15 +84,27 @@ input {
 #random:hover {
     font-size: 17px;
     background-color: rgb(255, 255, 255);
+}.err {
+    text-align: center;
+}
+.col {
+    float: left;
 }
 #flag {
     display: none;
-    width: 150px;
-    margin: 40px;
-
+    margin-left: 70px;
+    width: 150px; 
+    margin-right: 50px;
 }
-.err {
-    text-align: center;
+.list {
+    text-align: left;
+}
+.hPub {
+    padding-bottom: 30px;
+    border-bottom: solid 1px rgb(124, 124, 124);
+}
+.hName {
+    font-size: 20px;
 }
 
 
