@@ -10,6 +10,8 @@ let tracker = 0;
 async function searched(event) {
     event.preventDefault();
     error.innerText = '';
+    flagIMG.src = ''
+    cName.innerText = ''
     if (tracker == 1){
         document.querySelector('.list').innerText = ''
     }
