@@ -5,6 +5,10 @@ const search = document.querySelector('#searchButton');
 const random = document.querySelector('#random')
 const list = document.querySelector('.list')
 let cName  = document.querySelector('#cName')
+let hide = document.querySelector('.hide')
+const option = document.querySelector('.option')
+const title = document.querySelector('#title')
+let hideTrack = 0;
 let tracker = 0;
 
 async function searched(event) {
@@ -207,8 +211,44 @@ async function randomed(event){
     tracker = 1;
 }
 
+function hidden () {
+    if (hideTrack == 0) {
+        option.style.transition = 'opacity 0.3s'
+        option.style.opacity = '0'
+        option.style.height = '0'
+        title.style.marginBottom = '-20px';
+        option.style.paddingBottom = '0px'
+        document.querySelector('#random').style.display = 'none'
+        document.querySelector('#country-code').style.display = 'none'
+        document.querySelector('#holiday-name').style.display = 'none'
+        document.querySelector('#date').style.display = 'none'
+        document.querySelector('#searchButton').style.display = 'none'
+        hideTrack = 1;
+        hide.innerText = 'show'
+        option.style.display = none;
+    }
+    else {
+        title.style.margin = '40px';
+        option.style.transition = ''
+        option.style.transition = 'opacity 0.3s'
+        option.style.opacity = ''
+        option.style.height = ''
+        option.style.paddingBottom = '40px'
+        random.disabled = false;
+        document.querySelector('#random').style.display = 'inline'
+        document.querySelector('#country-code').style.display = 'inline'
+        document.querySelector('#holiday-name').style.display = 'inline'
+        document.querySelector('#date').style.display = 'inline'
+        document.querySelector('#searchButton').style.display = 'inline'
+        hideTrack = 0;
+        hide.innerText = 'hide'
+        option.style.display = inline;
+    }
+}
+
 search.addEventListener('click', searched);
 random.addEventListener('click', randomed)
+hide.addEventListener('click', hidden)
 
 
 
