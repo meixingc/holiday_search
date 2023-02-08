@@ -1,9 +1,10 @@
-
+const countries = `https://holidayapi.com/v1/countries?pretty&key=d194ebca-ea3d-4c62-84f4-0898e8fc9701`
 let flagIMG = document.querySelector('#flag');
 const error = document.querySelector('.err')
 const search = document.querySelector('#searchButton');
 const random = document.querySelector('#random')
 const list = document.querySelector('.list')
+let cName  = document.querySelector('#cName')
 let tracker = 0;
 
 async function searched(event) {
@@ -13,6 +14,17 @@ async function searched(event) {
         document.querySelector('.list').innerText = ''
     }
     let userCode = document.querySelector('#country-code').value.toUpperCase();
+    fetch(countries)
+        .then(res => {
+            return res.json()
+        })
+        .then(res => {
+            for (i = 0; i < res.countries.length; i++){
+                if (res.countries[i].code == userCode){
+                    cName.innerText = res.countries[i].name
+                }
+            }
+        })
     let name = document.querySelector('#holiday-name').value;
     let date = document.querySelector('#date').value;
     document.querySelector('#country-code').value = "";
@@ -139,7 +151,6 @@ async function randomed(event){
     if (tracker == 1){
         document.querySelector('.list').innerText = ''
     }
-    const countries = `https://holidayapi.com/v1/countries?pretty&key=d194ebca-ea3d-4c62-84f4-0898e8fc9701`
     fetch(countries)
         .then(res => {
             return res.json()
@@ -148,6 +159,17 @@ async function randomed(event){
             let countriesLength = res.countries.length
             let userIndex = Math.floor(Math.random() * countriesLength);
             let userCode = res.countries[userIndex].code
+            fetch(countries)
+                .then(res => {
+                    return res.json()
+                })
+                .then(res => {
+                    for (i = 0; i < res.countries.length; i++){
+                        if (res.countries[i].code == userCode){
+                            cName.innerText = res.countries[i].name
+                        }
+                    }
+                 })
             flagIMG.style.display = 'flex';
             flagIMG.src = `https://www.countryflagicons.com/FLAT/64/${userCode}.png`
             let holidayCountryUrl = `https://holidayapi.com/v1/holidays?pretty&key=d194ebca-ea3d-4c62-84f4-0898e8fc9701&country=${userCode}&year=2022`;
