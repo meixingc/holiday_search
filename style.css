@@ -121,13 +121,20 @@ input {
     font-size: 15px;
 }
 .hide {
+    text-align: center;
     display: flex;
-    margin:auto;
-    font-size: 15px;
+    justify-content: center;
+    margin: auto;
+    font-size: 13px;
+    height: 20px;
+    width: 50px;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(255, 255, 255);
     border: solid 1px rgb(0, 0, 0);
     box-shadow: 2px 2px 2px pink;
     text-shadow: 1px 1px 2px pink;
 } 
-
+.hide:hover {
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+}

@@ -222,6 +222,7 @@ function hidden () {
         document.querySelector('#country-code').style.display = 'none'
         document.querySelector('#holiday-name').style.display = 'none'
         document.querySelector('#date').style.display = 'none'
+        document.querySelector('.or').style.display = 'none'
         document.querySelector('#searchButton').style.display = 'none'
         hideTrack = 1;
         hide.innerText = 'show'
@@ -239,6 +240,7 @@ function hidden () {
         document.querySelector('#country-code').style.display = 'inline'
         document.querySelector('#holiday-name').style.display = 'inline'
         document.querySelector('#date').style.display = 'inline'
+        document.querySelector('.or').style.display = ''
         document.querySelector('#searchButton').style.display = 'inline'
         hideTrack = 0;
         hide.innerText = 'hide'
