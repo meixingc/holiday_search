@@ -242,7 +242,6 @@ function hidden () {
         document.querySelector('#searchButton').style.display = 'inline'
         hideTrack = 0;
         hide.innerText = 'hide'
-        option.style.display = inline;
     }
 }
 
