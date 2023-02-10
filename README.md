@@ -6,7 +6,7 @@
 2. Users will be able to randomly generate a holiday.
 
 ## Wireframe
-![Alt text](vscode-local:/c%3A/Users/meixing/Pictures/Screenshot%20%284%29.png)
+![Screenshot (4)](https://user-images.githubusercontent.com/117141950/218118440-69b290b2-50f9-4669-968b-f532429a0a79.png)
 
 ## APIs Used
 - https://holidayapi.com/holidays
