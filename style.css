@@ -1,6 +1,11 @@
 html {
     background-image: linear-gradient(90deg, hsl(345, 100%, 93%), rgb(210, 244, 255));
     font-family: 'Courier New', Courier, monospace;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
 }
 h1 {
     color: white;
